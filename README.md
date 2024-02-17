@@ -19,28 +19,4 @@ As the package is still in development, it's recommended to install it directly 
 
 ```bash
 pip install git+https://github.com/your-username/your-repository.git
-
-# Import the necessary modules
-from regression.linear_regression import LinearRegression
-from utils.preprocessing import TrainTestSplit
-from utils.metrics import R2Score
-
-# Load your dataset (replace this with your actual data loading code)
-X, y = load_dataset()
-
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = TrainTestSplit(X, y, test_size=0.2, random_state=42)
-
-# Instantiate the algorithm
-model = LinearRegression()
-
-# Train the algorithm
-model.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_hat = algorithm.predict(X_test)
-
-# Evaluate the model
-score = R2Score(y_test, y_hat)
-print(f"R2 Score: {score}")
 ```
