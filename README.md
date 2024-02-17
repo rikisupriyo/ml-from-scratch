@@ -1,4 +1,4 @@
-# Machine Learning Toolbox (Working Title)
+# Machine Learning Toolbox (IN DEVELOPMENT)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python Versions](https://img.shields.io/pypi/pyversions/your-package-name.svg)](https://pypi.org/project/your-package-name/)
