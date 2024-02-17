@@ -18,5 +18,5 @@ Your Machine Learning Toolbox is an in-development Python package aimed at provi
 As the package is still in development, it's recommended to install it directly from the GitHub repository:
 
 ```bash
-pip install git+https://github.com/your-username/your-repository.git
+pip install git+https://github.com/rikisupriyo/ml-from-scratch.git
 ```
