@@ -3,21 +3,24 @@ import time
 import math
 
 class LinearRegression:
-    def __init__(self, learning_rate = 1e-3, n_iters = 1000):
+    def __init__(self, learning_rate = 1e-3, n_iters = 1000, verbose = True):
         """
         Constructor for the LinearRegression class.
 
         Parameters:
         - learning_rate: The learning rate for gradient descent.
         - n_iters: The number of iterations for gradient descent.
+        - verbose: If True, print progress during training.
         """
         # Initialize hyperparameters
         self.learning_rate = learning_rate
         self.n_iters = n_iters
+        self.verbose = verbose
 
         # Initialize weights and bias
         self.weights = None
         self.bias = None
+        self.cost_history = []
 
     def __compute_gradient(self, X, y):
         """
@@ -64,13 +67,14 @@ class LinearRegression:
         for i in range(self.n_iters):
             # Compute gradients and cost
             dj_dw, dj_db, j_wb = self.__compute_gradient(X, y)
+            self.cost_history.append(j_wb)
 
             # Update weights and bias using gradient descent
             self.weights -= self.learning_rate * dj_dw
             self.bias -= self.learning_rate * dj_db
 
             # Print progress every 10% of iterations
-            if i % math.ceil(self.n_iters / 10) == 0:
+            if i % math.ceil(self.n_iters / 10) == 0 and self.verbose == True:
                 elapsed_time = time.time() - start_time
                 print(f"Iteration --> {i:5} | Cost --> {float(j_wb):8.2f} | Elapsed Time --> {elapsed_time:.2f} seconds")
 
